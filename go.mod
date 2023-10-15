@@ -1,4 +1,4 @@
-module github.com/maaverik/torrent-client
+module github.com/xackery/bittorrent
 
 go 1.15
 

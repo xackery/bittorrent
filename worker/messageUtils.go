@@ -1,6 +1,6 @@
 package worker
 
-import "github.com/maaverik/torrent-client/message"
+import "github.com/xackery/bittorrent/message"
 
 // Read reads and consumes a message from the connection
 func (w *Worker) Read() (*message.Message, error) {

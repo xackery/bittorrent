@@ -6,10 +6,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/maaverik/torrent-client/bitfield"
-	"github.com/maaverik/torrent-client/handshake"
-	"github.com/maaverik/torrent-client/message"
-	"github.com/maaverik/torrent-client/peers"
+	"github.com/xackery/bittorrent/bitfield"
+	"github.com/xackery/bittorrent/handshake"
+	"github.com/xackery/bittorrent/message"
+	"github.com/xackery/bittorrent/peers"
 )
 
 // represents a thread TCP connection with a peer

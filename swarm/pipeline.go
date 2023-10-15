@@ -3,7 +3,7 @@ package swarm
 import (
 	"time"
 
-	"github.com/maaverik/torrent-client/worker"
+	"github.com/xackery/bittorrent/worker"
 )
 
 // MaxBlockSize is the largest number of bytes a request can ask for

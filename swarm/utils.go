@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/maaverik/torrent-client/peers"
-	"github.com/maaverik/torrent-client/worker"
+	"github.com/xackery/bittorrent/peers"
+	"github.com/xackery/bittorrent/worker"
 )
 
 func (meta *DownloadMeta) calculateBoundsForPiece(index int) (int, int) {

@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/maaverik/torrent-client/bencodeUtils"
-	"github.com/maaverik/torrent-client/peers"
+	"github.com/xackery/bittorrent/bencodeUtils"
+	"github.com/xackery/bittorrent/peers"
 )
 
 // Port to listen on

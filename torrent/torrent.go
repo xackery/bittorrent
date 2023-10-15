@@ -6,8 +6,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/maaverik/torrent-client/bencodeUtils"
-	"github.com/maaverik/torrent-client/swarm"
+	"github.com/xackery/bittorrent/bencodeUtils"
+	"github.com/xackery/bittorrent/swarm"
 )
 
 // TorrentFile holds the metadata from a .torrent file, parsed from bencode
