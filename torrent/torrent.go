@@ -2,6 +2,7 @@ package torrent
 
 import (
 	"crypto/rand"
+	"io"
 	"log"
 	"os"
 
@@ -19,15 +20,9 @@ type TorrentFile struct {
 	Name           string
 }
 
-func Deserialize(path string) (TorrentFile, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		log.Fatalln("Opening torrent file failed")
-		return TorrentFile{}, err
-	}
-	defer file.Close()
-
-	torrentMeta, err := bencodeUtils.ParseTorrent(file)
+// Deserialize parses a torrent file from a given reader
+func Deserialize(r io.Reader) (TorrentFile, error) {
+	torrentMeta, err := bencodeUtils.ParseTorrent(r)
 	if err != nil {
 		log.Fatalln("Parsing torrent file content failed")
 		return TorrentFile{}, err
@@ -57,6 +52,18 @@ func Deserialize(path string) (TorrentFile, error) {
 		Name:           torrentMeta.Info.Name,
 	}
 	return t, nil
+}
+
+// DeserializePath decodes a provided path's torrent file
+func DeserializePath(path string) (TorrentFile, error) {
+	r, err := os.Open(path)
+	if err != nil {
+		log.Fatalln("Opening torrent file failed")
+		return TorrentFile{}, err
+	}
+	defer r.Close()
+
+	return Deserialize(r)
 }
 
 func (t *TorrentFile) DownloadToFile(path string) error {

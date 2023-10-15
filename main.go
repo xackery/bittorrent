@@ -17,7 +17,7 @@ func main() {
 	// path to save file
 	outPath := os.Args[2]
 
-	tor, err := torrent.Deserialize(inPath)
+	tor, err := torrent.DeserializePath(inPath)
 	if err != nil {
 		log.Fatalln(err)
 	}
